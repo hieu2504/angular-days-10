@@ -1,7 +1,14 @@
 <hello name="{{ name }}"></hello>
 <p>Start editing to see some magic happen :)</p>
 
+<input
+  #nameInput
+  type="text"
+  [ngModel]="name"
+  (ngModelChange)="name = $event"
+/>
+
 <!-- toggleComp la instance cua toggleComponent -->
 <toggle [(checked)]="isChecked"></toggle>
 
-<!-- <button #toggleButton (click)="toggleComp.toggle()">Toggle me</button> -->
+<button #toggleButton>Toggle me</button>
