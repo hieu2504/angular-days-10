@@ -7,8 +7,13 @@
   [ngModel]="name"
   (ngModelChange)="name = $event"
 />
-
+<button (click)="showLast = !showLast">Toggle show last</button>
 <!-- toggleComp la instance cua toggleComponent -->
 <toggle [(checked)]="isChecked"></toggle>
+<toggle [(checked)]="isChecked"></toggle>
 
-<button #toggleButton>Toggle me</button>
+<ng-container *ngIf="showLast">
+  <toggle [(checked)]="isChecked"></toggle>
+</ng-container>
+
+<!-- <button #toggleButton>Toggle me</button> -->
